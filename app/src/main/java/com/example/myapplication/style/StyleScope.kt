@@ -10,9 +10,9 @@ class StyleScope(
 
     var css: String?
         get() = _css
-        set(css: String?) = setCss(css)
+        set(css: String?) = _setCss(css)
 
-    fun setCss(css: String?) {
+    fun _setCss(css: String?) {
         if (css != null) {
             val cssSource = CSSSource.fromSource(css)
             _localSelectorsMap = cssSource.selectors;
