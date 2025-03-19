@@ -249,13 +249,9 @@ fun main() {
 
     val matches = selectorsMap.query(element);
 
+
     val end = System.nanoTime();
 
-    println("Parsed successfully: ${end - start}ms ${matches.selectors.size}")
+    println("Parsed successfully: ${end - start}ns ${matches.selectors[0].ruleSet}")
 
-//    if (parsedSelector != null) {
-//
-//    } else {
-//        println("Failed to parse selector.")
-//    }
 }

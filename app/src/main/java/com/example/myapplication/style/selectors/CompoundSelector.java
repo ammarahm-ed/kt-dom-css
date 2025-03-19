@@ -24,6 +24,11 @@ public class CompoundSelector extends Selector {
     }
 
     @Override
+    public String getType() {
+        return type;
+    }
+
+    @Override
     public boolean matches(Element element) {
         for (int i = simpleSelectors.size() - 1; i >= 0; i--) {
             SimpleSelector simpleSelector = (SimpleSelector) simpleSelectors.get(i);

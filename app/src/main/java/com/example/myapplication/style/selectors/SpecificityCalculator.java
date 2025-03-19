@@ -10,21 +10,27 @@ public class SpecificityCalculator {
         int totalSpecifcity = 0;
 
         for (Selector selector : selectors) {
-            if (selector.type.equals("id")) {
-                specificity[0]++;
-            } else if (selector.type.equals("class")) {
-                specificity[1]++;
-            } else if (selector.type.equals("attribute")) {
-                specificity[1]++;
-            } else if (selector.type.equals("pseudo")) {
+            if (selector.isSimpleSelector()) {
+                String type = selector.getType();
+                if (type.equals("tag")){
+                    specificity[2]++;
+                }if (type.equals("id")) {
+                    specificity[0]++;
+                } else if (type.equals("class")) {
+                    specificity[1]++;
+                } else if (type.equals("attribute")) {
+                    specificity[1]++;
+                } else if (type.equals("pseudo")) {
 //                if (selector.type.equals("psuedoElement")) {
 //                    specificity[2]++;
 //                } else {
                     specificity[1]++;
 //                }
+                } else {
+                    specificity[2]++;
+                }
             } else if (selector.type.equals("compound")) {
                 totalSpecifcity += selector.specificity;
-
             } else if (selector.type.equals("relative")) {
                 totalSpecifcity += selector.specificity;
             } else if (selector.type.equals("complex")) {

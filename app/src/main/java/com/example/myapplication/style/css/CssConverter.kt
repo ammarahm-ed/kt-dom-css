@@ -126,6 +126,7 @@ object CssConverter {
                                 anchorSelector,
                                 relativeSelector
                             )
+                        finalizedSelector.ruleSet = ruleSet;
                         finalizedSelector;
 
                     } else {

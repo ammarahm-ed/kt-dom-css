@@ -25,6 +25,11 @@ public class ComplexSelector extends Selector {
     }
 
     @Override
+    public String getType() {
+        return type;
+    }
+
+    @Override
     public boolean matches(Element element) {
         // Start with the last selector and work backwards
         Selector currentSelector = selectors.get(selectors.size() - 1);

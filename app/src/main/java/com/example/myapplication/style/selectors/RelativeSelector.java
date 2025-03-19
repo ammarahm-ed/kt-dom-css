@@ -26,6 +26,11 @@ public class RelativeSelector extends Selector {
     }
 
     @Override
+    public String getType() {
+        return type;
+    }
+
+    @Override
     public boolean accumlateChanges(Element element, SelectorsMatch match) {
         if (!anchorSelector.matches(element)) {
             return false;

@@ -11,9 +11,6 @@ public class SimpleSelector extends Selector {
     public String type;
     public String tag;
     public Boolean universal = false;
-
-    public SimpleSelector() {}
-
     @Override
     public boolean matches(Element element) {
         if (universal) {
@@ -38,5 +35,10 @@ public class SimpleSelector extends Selector {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public String getType() {
+        return type;
     }
 }

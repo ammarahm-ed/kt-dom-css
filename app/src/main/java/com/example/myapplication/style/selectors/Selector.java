@@ -26,6 +26,9 @@ public abstract class Selector {
         return false;
     }
 
+    String getType() {
+        return this.type;
+    }
 
     public boolean matches(Element element) {
         return false;
@@ -35,9 +38,7 @@ public abstract class Selector {
         // Implemented by dynamic selectors
     }
 
-    public  boolean isSimpleSelector() {
-        return !this.type.equals("compound") && !this.type.equals("relative") && this.type.equals("complex");
+    public boolean isSimpleSelector() {
+        return !this.getType().equals("compound") && !this.getType().equals("relative") && !this.getType().equals("complex");
     }
-
-
 }

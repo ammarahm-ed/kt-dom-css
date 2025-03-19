@@ -23,6 +23,11 @@ public class AttributeSelector extends SimpleSelector {
     }
 
     @Override
+    public String getType() {
+        return type;
+    }
+
+    @Override
     public boolean matches(Element element) {
         String attrValue = element.getAttribute(attribute);
         if (attrValue == null) {

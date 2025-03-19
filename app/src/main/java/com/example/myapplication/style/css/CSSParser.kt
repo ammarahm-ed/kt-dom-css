@@ -242,7 +242,7 @@ fun main() {
         """parent{color: red;}"""
 
     val start = System.nanoTime();
-    for (i in 1..100) {
+    for (i in 1..2) {
        parse(css)
     }
     val end = System.nanoTime();
